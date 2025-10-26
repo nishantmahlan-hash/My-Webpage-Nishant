@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>About Me - Nishant</title>
+  <link rel="stylesheet" href="WEBPAGE.css">
+</head>
+<body>
+
+  <h1>Hello, I'm Nishant 👋</h1>
+  <p>Welcome to my first About Me webpage!</p>
+
+  <hr>
+
+  <h2>My Photo</h2>
+  <img src="myphoto.jpg" alt="My Photo" width="385" height="650"><br><br>
+
+  <hr>
+
+  <h2>My Hobbies</h2>
+  <ul>
+    <li>Playing badminton 🏸</li>
+    <li>Listening to music 🎵</li>
+    <li>Learning HTML 💻</li>
+  </ul>
+
+  <hr>
+
+  <h2>My Favorite Songs</h2>
+  <ol>
+    <li>Tu Hai Kahan</li>
+    <li>Shikayat</li>
+    <li>Kabhi Kabhi</li>
+  </ol>
+
+  <hr>
+
+  <h2>Tell Me About You</h2>
+  <form id="userForm">
+    <label>Enter your name:</label><br>
+    <input type="text" id="name" placeholder="Your name" required><br><br>
+
+    <label>Enter your hobbies:</label><br>
+    <input type="text" id="hobbies" placeholder="Your hobbies" required><br><br>
+
+    <h3>Choose your favorite color:</h3>
+    <input type="radio" name="color" id="red" value="Red" required>
+    <label for="red">Red</label><br>
+
+    <input type="radio" name="color" id="blue" value="Blue">
+    <label for="blue">Blue</label><br>
+
+    <input type="radio" name="color" id="green" value="Green">
+    <label for="green">Green</label><br><br>
+
+    <input type="submit" value="Submit">
+  </form>
+
+  <h2>Your Submitted Info:</h2>
+  <div id="output"></div>
+
+  <script src="WEBPAGE.js"></script>
+</body>
+</html>
