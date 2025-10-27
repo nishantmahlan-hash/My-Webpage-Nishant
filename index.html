@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me - Nishant</title>
+  <link rel="stylesheet" href="nishant.css">
+</head>
+<body>
+
+  <header>
+    <h1>Hello, I'm Nishant 👋</h1>
+    <p>Welcome to my personal webpage!</p>
+  </header>
+
+  <section class="photo">
+    <h2>My Photo</h2>
+    <img src="myphoto.jpg" alt="Nishant Photo">
+  </section>
+
+  <section class="about">
+    <h2>About Me</h2>
+    <p>I am a student, learning coding, badminton enthusiast, and fan of music. This is my small space on the web!</p>
+  </section>
+
+  <section class="contact">
+    <h2>Contact Me</h2>
+    <button id="greetBtn">Click me to get a greeting!</button>
+    <p id="greetText"></p>
+  </section>
+
+  <script src="nishant.js"></script> 
+  
+  <section class="user-input">
+  <h2>Tell Me About Yourself</h2>
+  <form id="infoForm">
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" placeholder="Enter your name" required><br><br>
+
+    <label for="hobbies">Hobbies:</label><br>
+    <input type="text" id="hobbies" placeholder="Enter your hobbies" required><br><br>
+
+    <label for="color">Favorite Color:</label><br>
+    <input type="text" id="color" placeholder="Enter your favorite color" required><br><br>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <p id="userOutput"></p>
+</section>
+
+<script>
+  document.getElementById('infoForm').addEventListener('submit', function(e){
+    e.preventDefault(); // Prevent form from reloading page
+
+    const name = document.getElementById('name').value;
+    const hobbies = document.getElementById('hobbies').value;
+    const color = document.getElementById('color').value;
+
+    document.getElementById('userOutput').textContent = 
+      `Hi ${name}! Your hobbies are: ${hobbies}. Your favorite color is ${color}.`;
+    
+    // Optional: Clear inputs
+    this.reset();
+  });
+</script>
+
+<style>
+  /* Optional small styling so it blends with your existing page */
+  .user-input {
+    margin: 30px auto;
+    padding: 20px;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 15px;
+  }
+
+  .user-input input {
+    width: 90%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+  }
+
+  .user-input button {
+    margin-top: 10px;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 8px;
+    background: #ffb347;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .user-input button:hover {
+    background: #ffcc70;
+  }
+
+  #userOutput {
+    margin-top: 15px;
+    font-weight: bold;
+  }
+</style>
+  
+  </body>
+</html>
