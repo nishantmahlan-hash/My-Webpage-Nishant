@@ -39,3 +39,40 @@ if (weatherForm) {
     weatherForm.reset();
   });
         }
+// Weather Fetch with Proxy (Works on GitHub Pages)
+async function getWeather() {
+  const city = document.getElementById("city").value;
+  const state = document.getElementById("state").value;
+  const apiKey = "YOUR_API_KEY"; // Replace with your OpenWeatherMap API key
+
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city},${state}&appid=${apiKey}&units=metric`;
+
+  // Proxy to bypass CORS
+  const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(url)}`;
+
+  document.getElementById("weatherResult").textContent = "Fetching weather...";
+
+  try {
+    const response = await fetch(proxyUrl);
+    const data = await response.json();
+    const weatherData = JSON.parse(data.contents);
+
+    if (weatherData.cod === 200) {
+      const temp = weatherData.main.temp;
+      const desc = weatherData.weather[0].description;
+      const place = `${weatherData.name}, ${weatherData.sys.country}`;
+      document.getElementById("weatherResult").innerHTML =
+        `🌤️ Weather in <b>${place}</b>: ${temp}°C, ${desc}`;
+    } else {
+      document.getElementById("weatherResult").textContent =
+        "❌ City not found. Please try again.";
+    }
+  } catch (error) {
+    console.error(error);
+    document.getElementById("weatherResult").textContent =
+      "⚠️ Unable to fetch weather data. Try again later.";
+  }
+}
+
+// Optional: add button click event
+document.getElementById("weatherBtn").addEventListener("click", getWeather);
