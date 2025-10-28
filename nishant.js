@@ -15,7 +15,7 @@ if (weatherForm) {
     weatherOutput.textContent = "Fetching weather...";
 
     // ⚠️ Replace YOUR_API_KEY with your actual key from openweathermap.org
-    const apiKey = "YOUR_API_KEY";
+    const apiKey = e27b9d3c1ba2f272c9d26921548a86a1;
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)},${encodeURIComponent(state)},IN&appid=${apiKey}&units=metric`;
 
     try {
