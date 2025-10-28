@@ -19,6 +19,7 @@ if (weatherForm) {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)},${encodeURIComponent(state)},IN&appid=${apiKey}&units=metric`;
 
     try {
+      console.log("Fetching:", url);
       const response = await fetch(url);
       if (!response.ok) throw new Error("City not found");
       const data = await response.json();
